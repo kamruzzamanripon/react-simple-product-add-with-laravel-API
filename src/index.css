@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.mr-auto.nav_bar_wrapper.navbar-nav a {
+  color: #fff;
+  padding: 8px;
+}
+
+span.btnProduct {
+  background: red;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+span.btnProduct.update {
+  background: gray;
+}
