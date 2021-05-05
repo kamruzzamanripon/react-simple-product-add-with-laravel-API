@@ -28,6 +28,7 @@ function AddProduct(){
         <div>
             <Header />
             <div className="col-sm-6 offset-sm-3">
+                <h1>Add Your Product</h1>
                 <br />
                 <input type="text" className="form-control" placeholder="name" onChange={ (e)=> setName(e.target.value)} value={name} />
                 <input type="file" className="form-control" placeholder="file" onChange={ (e)=> setFile(e.target.files[0])} />
