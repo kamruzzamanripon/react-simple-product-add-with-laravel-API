@@ -1,13 +1,13 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import './App.css';
-import Login from './Login';
-import Register from './Register';
-import AddProduct from './AddProduct';
-import UpdateProduct from './UpdateProduct';
-import Protected from './Protected'
-import ProductList from './ProductList'
-import SearchComponent from './SearchProduct'
+import Login from './component/Login';
+import Register from './component/Register';
+import AddProduct from './component/AddProduct';
+import UpdateProduct from './component/UpdateProduct';
+import Protected from './component/Protected'
+import ProductList from './component/ProductList'
+import SearchComponent from './component/SearchProduct'
 
 
 
