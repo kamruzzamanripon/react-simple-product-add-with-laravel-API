@@ -40,6 +40,7 @@ function UpdateProduct(props){
         <div>
             <Header />
             <div className="col-sm-6 offset-sm-3">
+            <h1>Update Your Product</h1>
                 <br />
                 <input type="text" className="form-control" placeholder="name" defaultValue={data.name} onChange={ (e)=> setName(e.target.value)}  />
                 <input type="text" className="form-control" placeholder="price" defaultValue={data.price} onChange={ (e)=> setPrice(e.target.value)} value={price} />
