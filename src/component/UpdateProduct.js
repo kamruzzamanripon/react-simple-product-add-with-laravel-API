@@ -2,6 +2,7 @@ import Header from './Header';
 import {withRouter} from 'react-router-dom'
 import {useEffect, useState} from 'react'
 
+
 function UpdateProduct(props){
     //console.warn(props)
     const [data, setData] = useState([])

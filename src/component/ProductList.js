@@ -3,10 +3,16 @@ import Header from './Header'
 import React,{useState, useEffect} from 'react'
 import {Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts } from "../redux/actions/productsActions";
 
 function ProductList()
 {
-    const [data, setData] = useState([]);
+    //const [data, setData] = useState([]);
+    const products = useSelector((state) => state.allProducts.data);
+    const dispatch = useDispatch();
+
     useEffect( async ()=>{
         getData()
     },[])
@@ -17,17 +23,24 @@ function ProductList()
         let result = await fetch("http://127.0.0.1:8000/api/delete/" + id,{
             method:"DELETE"
         })
-        result = await result.json()
+        
         getData()
     }
 
     async function getData()
     {
-        let result = await fetch('http://127.0.0.1:8000/api/list');
-        result = await result.json();
-        setData(result)
-    }
-
+        const response = await axios
+            .get("http://127.0.0.1:8000/api/list")
+            .catch((err) => {
+                console.log("Err: ", err);
+            });
+            //console.log("axios", response.data)
+            dispatch(setProducts(response.data));
+        };
+        
+       
+    
+    console.log("state product", products)
     return(
         <div>
             <Header />
@@ -46,7 +59,7 @@ function ProductList()
                         </thead>
                         <tbody>
                             {
-                                data.map((item )=>
+                                products.map((item )=>
                                     <tr key={item.id}>
                                         <td>{item.id} </td>
                                         <td>{item.name}</td>
